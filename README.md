@@ -8,7 +8,7 @@
 * npm start
 
 ### Warning Note
-* ES6 + React 的方式 与 ES5的方式
+* ES6 + React 方式 与 ES5方式 的区别
 
 ES6的写法
 ```js
