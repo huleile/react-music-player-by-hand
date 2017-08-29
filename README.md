@@ -45,11 +45,11 @@ ES5的写法
 
 * webpack-hot-loader 配置
 
-###TODO
+### TODO
 * react-router 2.0 升级到4.0或 react-router-dom
 * redux 的使用
 
 
-###Thanks
+### Thanks
 感谢慕课网 musiq 老师的悉心讲解！
 Course URL: http://www.imooc.com/u/1312558/courses?sort=publish
