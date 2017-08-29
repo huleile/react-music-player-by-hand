@@ -18,7 +18,7 @@ module.exports = {
         // webpack gives your modules and chunks ids to identify them. Webpack can vary the
         // distribution of the ids to get the smallest id length for often used ids with
         // this plugin
-        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
 
         // handles creating an index.html file and injecting assets. necessary because assets
         // change name because the hash part changes. We want hash name changes to bust cache
@@ -29,7 +29,7 @@ module.exports = {
           inject: 'body',
           filename: './index.html'
         }),
-        // handles uglifying js
+        // 压缩代码
         new webpack.optimize.UglifyJsPlugin({
             compressor: {
                 warnings: false,
@@ -70,8 +70,5 @@ module.exports = {
                 loader: 'style-loader!css-loader!less-loader'
             }
         ]
-    },
-    postcss: [
-        require('autoprefixer')
-    ]
+    }
 };
