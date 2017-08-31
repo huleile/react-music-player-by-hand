@@ -38,7 +38,8 @@ module.exports = {
             compressor: {
                 warnings: false,
                 screw_ie8: true
-            }
+            },
+            minimize: true
         }),
         // plugin for passing in data to the js, like what NODE_ENV we are in.
         new webpack.DefinePlugin({
@@ -72,6 +73,13 @@ module.exports = {
             {
                 test: /\.less/,
                 loader: 'style-loader!css-loader!less-loader'
+            },
+            {
+                test: /\.(png|jpg|jpeg|gif)/,
+                loader: "url-loader",
+                options: {
+                    limit: 8192   // 小于8K 使用 base64格式图片
+                }
             }
         ]
     }

@@ -21,6 +21,8 @@ module.exports = {
   },
   plugins: [
     new webpack.BannerPlugin('版权所有, 翻版必究'),
+    //这个使用uglifyJs压缩你的js代码
+    new webpack.optimize.UglifyJsPlugin({ minimize: true }),
     new HtmlWebpackPlugin({
       template: './app/index.tpl.html',
       inject: 'body',
@@ -58,6 +60,13 @@ module.exports = {
       {
         test: /\.less$/,
         loader: "style-loader!css-loader!less-loader"
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)/,
+        loader: "url-loader",
+        options: {
+            limit: 8192   // 小于8K 使用 base64格式图片
+        }
       }
     ]
   }
