@@ -28,9 +28,9 @@ module.exports = {
       inject: 'body',
       filename: './index.html'
     }),
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),  //排序输出
+    new webpack.HotModuleReplacementPlugin(), 
+    new webpack.NoEmitOnErrorsPlugin(),//在webpack 2中使用NoErrorsPlugin会有警告提示
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     })
