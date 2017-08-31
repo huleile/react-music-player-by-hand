@@ -4,6 +4,7 @@ let webpack = require('webpack');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  devtool: 'eval-source-map',
   entry: [
     "webpack-dev-server/client?http://localhost:8090",
     "webpack/hot/only-dev-server",
@@ -12,8 +13,11 @@ module.exports = {
   ],
   output: {
     path: `${__dirname}/dist`,
-    filename: '[name].js',
+    filename: '[name].min.js',
     publicPath: '/'
+  },
+  resolve: {
+    extensions: [".js", ".json", ".jsx", ".css", ".less"]
   },
   plugins: [
     new webpack.BannerPlugin('版权所有, 翻版必究'),

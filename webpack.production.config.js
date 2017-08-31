@@ -5,14 +5,18 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     // The entry file. All your app roots fromn here.
+    devtool: 'eval-source-map',
     entry: [
         `${__dirname}/app/index.js`
     ],
     // Where you want the output to go
     output: {
         path: `${__dirname}/dist`,
-        filename: '[name]-[hash].min.js',
+        filename: '[name].min.js',
         publicPath: '/'
+    },
+    resolve: {
+        extensions: [".js", ".json", ".jsx", ".css", ".less"]
     },
     plugins: [
         // webpack gives your modules and chunks ids to identify them. Webpack can vary the
